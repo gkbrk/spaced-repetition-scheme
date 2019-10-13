@@ -22,10 +22,14 @@
          (uses SMTWO)
          (uses DATABASE)
          (uses UI)
-         (uses UTILS))
+         (uses UTILS)
+         (uses SYSLOG))
+
+(log-info "Starting program")
 
 (define DBPATH "testdb.txt")
 
+(log-debug "Loading database")
 (each-line DBPATH
            (lambda (x)
              (set! database (cons x database))))
